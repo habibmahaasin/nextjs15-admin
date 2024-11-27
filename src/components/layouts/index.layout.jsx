@@ -21,8 +21,8 @@ const MainLayout = ({ children }) => {
           />
 
           <Header />
-          <div className="drawer-content">
-            <div className="mt-24 border min-h-full rounded-lg mx-4 p-2">
+          <div className="drawer-content overflow-y-auto mt-[5.5rem] pb-4 h-[calc(100vh-6rem)]">
+            <div className="border rounded-lg mx-4 p-2 min-h-full">
               {children}
             </div>
           </div>

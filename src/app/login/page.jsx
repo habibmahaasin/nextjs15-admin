@@ -1,12 +1,12 @@
-import Form from "@/components/fragments/form/login.fragment";
+import LoginFormFragment from "@/components/fragments/form/login.fragment";
 
-const LoginPages = () => {
+const LoginPage = () => {
   return (
     <div className="w-full flex flex-col gap-2 py-4 w-md items-center">
       <h2 className="font-bold ">Login Pages</h2>
-      <Form />
+      <LoginFormFragment />
     </div>
   );
 };
 
-export default LoginPages;
+export default LoginPage;

@@ -1,4 +1,28 @@
+"use clienr";
+import { Icon } from "@iconify/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 const Sidebar = () => {
+  const pathname = usePathname();
+  const SIDEBAR_MENU = [
+    {
+      title: "Dashboard",
+      icon: "si:dashboard-line",
+      link: "/",
+    },
+    {
+      title: "Form",
+      icon: "fluent:form-20-regular",
+      link: "/form",
+    },
+    {
+      title: "Table",
+      icon: "proicons:table",
+      link: "/table",
+    },
+  ];
+
   return (
     <div className="drawer-side h-screen">
       <label
@@ -11,13 +35,21 @@ const Sidebar = () => {
           <div className="font-bold text-[24px] w-full text-center mt-8">
             Logo
           </div>
-          <ul className="flex flex-col gap-2">
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>
+          <ul className="flex flex-col">
+            {SIDEBAR_MENU.map((menu, index) => (
+              <li className="flex" key={index}>
+                <Link
+                  href={menu.link}
+                  className={`py-4 flex items-center ${
+                    pathname === menu.link &&
+                    "bg-black bg-opacity-10 !text-white"
+                  }`}
+                >
+                  <Icon icon={menu.icon} className="text-[20px] -mt-1" />
+                  {menu.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

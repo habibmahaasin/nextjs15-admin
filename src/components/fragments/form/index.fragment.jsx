@@ -4,9 +4,9 @@ import Button from "@/components/elements/button.elements";
 import Input from "../../elements/input.elements";
 import { Icon } from "@iconify/react";
 
-const LoginFormFragment = () => {
+const FormFragment = () => {
   return (
-    <div className="flex flex-col gap-2 w-6/12">
+    <div className="flex flex-col gap-2 w-full">
       <Input
         type="text"
         placeholder="Search..."
@@ -22,7 +22,7 @@ const LoginFormFragment = () => {
         className="w-full"
       />
       <Button
-        className="btn-primary"
+        className="btn-primary text-white"
         onClick={() => console.log("Button clicked")}
       >
         Submit
@@ -31,4 +31,4 @@ const LoginFormFragment = () => {
   );
 };
 
-export default LoginFormFragment;
+export default FormFragment;
